@@ -1,11 +1,21 @@
 
-import React from "react";
+import React, { useState } from "react";
 import './../styles/App.css';
+import Modal from "./Modal"
 
 const App = () => {
+
+  let [show,setShow]=useState(false);
+
   return (
     <div>
-        {/* Do not remove the main div */}
+        <Modal show={show} onClose={setShow} >
+            <div className="model-overlay">
+              <button className="model-close" 
+             style={{cursor:"pointer"}} onClick={()=>{setShow(false)}}>Close</button>
+              <p className="model-p">This is the content of the modal.</p>
+            </div>
+        </Modal>
     </div>
   )
 }
