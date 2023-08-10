@@ -8,7 +8,7 @@ const App = () => {
   let [show,setShow]=useState(false);
 
   return (
-    <div>
+    <div  onClick={(e)=>{if(e.target.className!=="showbtn"){console.log(e.target);setShow(false)}}}>
         <Modal show={show} onClose={setShow} >
             <div className="model-overlay">
               <button className="model-close" 
